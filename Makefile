@@ -15,9 +15,10 @@ PROG_NAMES=nitro nitro_version
 PROG_FILES=$(addprefix prog/, $(addsuffix .cpp, $(PROG_NAMES)))
 PROGS=$(addprefix $(BINDIR)/, $(PROG_NAMES))
 
+CPPFLAGS="-std=c++14"
 CPPFLAGS:=$(CPPFLAGS) -Wall -fPIC -Iinclude -I$(shell python -c "from distutils import sysconfig; print sysconfig.get_config_var('INCLUDEPY');") -Ipython/py/nitro/include
 PYLIB:=$(shell python -c "from distutils import sysconfig; print sysconfig.get_config_var('BLDLIBRARY')")
-
+LDFLAGS:=-L$(CONDA_PREFIX)/lib
 USBLIB=-lusb-1.0
 
 OBJNAMES=node device usb error types reader xmlreader userdevice writer xmlwriter scripts version

@@ -38,7 +38,7 @@ def get_ext():
         plat_export_symbols = ['init_nitro_d']
     else:
         plat_library_dirs = ['../build/usr/lib', '../build/usr/lib64' ]
-        plat_extra_compile_args =[]
+        plat_extra_compile_args =['-std=c++14']
         plat_define_macros = []
         plat_export_symbols = []
 

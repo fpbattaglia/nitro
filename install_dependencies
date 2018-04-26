@@ -1,0 +1,6 @@
+apt install libxerces-c-dev
+apt install libusb-1.0-0-dev
+apt install libgmp3-dev
+
+source activate inscopix_reader
+export LD_LIBRARY_PATH=${CONDA_PREFIX}/lib
